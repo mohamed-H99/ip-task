@@ -1,16 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&family=Roboto:wght@300;400&display=swap');
-#main-container {
-  width: 1200px;
-  max-width: 100%;
-  margin: 0 auto;
-  overflow: hidden;
-  background-color: #fff;
-}
+
 .container {
-  width: 900px;
-  max-width: 95%;
+  width: 95%;
+  max-width: 900px;
   margin: 0 auto;
-  padding: 0 1.5rem;
+  padding: 0;
 }
 .text-center {
   text-align: center;
@@ -526,10 +520,6 @@ body {
   color: #ccc;
 }
 @media screen and (max-width: 768px) {
-  #main-container {
-    width: auto;
-    display: block;
-  }
   #main-header > div {
     display: grid;
     align-items: center;
@@ -632,12 +622,16 @@ body {
 /* drinks */
 .drinks-page .topbar {
   background-color: #fff;
+}
+.drinks-page .topbar address {
   padding-top: 10px;
   padding-bottom: 10px;
 }
 .drinks-page .logo {
+  padding: 10px 15px;
   font-weight: bold;
-  color: #111;
+  color: #fff;
+  background-color: #111;
   text-decoration: none;
   font-size: 1.15rem;
 }
@@ -680,10 +674,19 @@ body {
 }
 .drinks-page .items {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: 1fr;
   gap: 24px;
-  padding-top: 24px;
-  padding-bottom: 24px;
+  padding: 48px 32px;
+}
+@media (min-width: 576px) {
+  .drinks-page .items {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 768px) {
+  .drinks-page .items {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 .drinks-page .items > * {
   background-color: #fff;
@@ -698,7 +701,7 @@ body {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  max-width: 16ch;
+  max-width: 20ch;
   font-size: 1.15rem;
 }
 .drinks-page .items p {
@@ -713,6 +716,7 @@ body {
   bottom: 0px;
   right: 0px;
   color: #1abc9c;
+  background-color: #fff;
 }
 .drinks-page .intro {
   background-color: #111;
@@ -727,11 +731,12 @@ body {
 }
 .drinks-page .intro p {
   letter-spacing: 1px;
-  line-height: 1.5;
+  line-height: 1.7;
 }
 .drinks-page .footer-line {
   padding-top: 10px;
   padding-bottom: 10px;
   font-size: 14px;
   font-weight: bold;
+  background-color: #fff;
 }
